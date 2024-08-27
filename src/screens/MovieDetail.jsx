@@ -31,7 +31,8 @@ const MovieDetail = () => {
       <button
         style={{ marginTop: "1.4rem" }}
         onClick={() => {
-          window.location = filteredData.Watch;
+          //   window.location = filteredData.Watch;
+          window.open(filteredData.Watch, "_blank");
         }}
       >
         Play
