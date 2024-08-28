@@ -25,10 +25,24 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", paddingTop: "1.3rem" }}>
       <MainHeader />
       <Hero />
-      <Movies data={data} />
+      <h2
+        className="text-white"
+        style={{
+          textAlign: "left",
+          fontSize: "44px",
+          marginBottom: "36px",
+          color: "white",
+          fontWeight: "semi-bold",
+          marginLeft: "3.2rem",
+        }}
+      >
+        Movies
+      </h2>
+      <Movies data={data} heading="Animation Movies" />
+      <Movies data={data} heading="Adventure Movies" />
     </div>
   );
 };

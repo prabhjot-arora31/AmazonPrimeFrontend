@@ -6,8 +6,17 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": {
-        target: "https://amazon-prime-backend.vercel.app",
+      "/movies": {
+        target: "https://amazon-prime-backend.vercel.app/",
+        changeOrigin: true,
+      },
+      "/api/user": {
+        target: "https://amazon-prime-backend.vercel.app/",
+        changeOrigin: true,
+      },
+      "/api/user/login": {
+        target: "https://amazon-prime-backend.vercel.app/",
+        changeOrigin: true,
       },
     },
   },

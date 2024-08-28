@@ -3,7 +3,7 @@
   border-radius: 7px;
   height: 140px;
   /* overflow: hidden; */
-  position: relative;
+  /* position: relative; */
   cursor: pointer;
   max-height: 350px;
   transition: 0.4s ease-in-out;
@@ -27,7 +27,7 @@
 }
 .extra-info {
   font-size: 11px;
-  color: rgba(163, 158, 158, 0.911);
+  color: rgba(95, 90, 90, 0.911);
   margin-top: 8px;
   margin-left: 6px;
   display: flex;

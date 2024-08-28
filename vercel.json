@@ -1,5 +1,14 @@
 {
     "rewrites": [
+      { "source": "/movies", "destination": "/movies" },
+      {
+        "source": "/api/user",
+        "destination": "/api/user"
+      },
+      {
+        "source": "/api/user/login",
+        "destination": "/api/user/login"
+      },
       {
         "source": "/(.*)",
         "destination": "/index.html"

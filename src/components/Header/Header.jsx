@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Header.css";
+import { useNavigate } from "react-router-dom";
 const Header = () => {
   const [verticalMenuOpened, setVerticalMenuOpened] = useState(false);
+  const navigate = useNavigate();
   return (
     <div
       className="header"
@@ -19,7 +21,14 @@ const Header = () => {
         alt=""
       />
       <div className="menu">
-        <h3 className="header-text">Home</h3>
+        <h3
+          className="header-text"
+          onClick={() => {
+            navigate("/home");
+          }}
+        >
+          Home
+        </h3>
         <h3 className="header-text">Movies</h3>
         <h3 className="header-text">TV Shows</h3>
         <h3 className="header-text">Live TV</h3>
@@ -39,7 +48,14 @@ const Header = () => {
             X
           </button>
           <div>
-            <h3 className="header-text">Home</h3>
+            <h3
+              className="header-text"
+              onClick={() => {
+                navigate("/home");
+              }}
+            >
+              Home
+            </h3>
             <h3 className="header-text">Movies</h3>
             <h3 className="header-text">TV Shows</h3>
             <h3 className="header-text">Live TV</h3>

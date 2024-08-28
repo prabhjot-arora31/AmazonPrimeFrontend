@@ -8,12 +8,12 @@ const MainHeader = () => {
     <div
       style={{
         position: "relative",
-        top: "-19px",
+        top: "-20px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         flexWrap: "wrap",
-        gap: "3rem",
+        gap: "0.2rem",
       }}
     >
       <Header />
