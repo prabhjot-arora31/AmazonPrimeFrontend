@@ -7,12 +7,13 @@ const WatchMovie = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ height: "100vh", padding: "2rem", boxSizing: "border-box" }}>
+    <div style={{ height: "100vh", boxSizing: "border-box" }}>
       <button
         onClick={() => {
           navigate(`/movie/${localStorage.getItem("movieId")}`);
         }}
         style={{
+          marginTop:'10px',
           padding: "0.5rem 1rem",
           fontSize: "1rem",
           cursor: "pointer",
