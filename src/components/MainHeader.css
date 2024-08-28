@@ -1,0 +1,13 @@
+.header-right {
+  display: "flex";
+  height: "100%";
+  flex-direction: "row";
+  justify-content: "center";
+  align-items: "center";
+}
+
+@media (max-width: 1080px) {
+  .header-right {
+    display: none;
+  }
+}

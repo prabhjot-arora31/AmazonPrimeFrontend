@@ -147,6 +147,8 @@ const Movies = ({ data, heading }) => {
                 <img
                   onClick={() => {
                     navigate(`/movie/${id}`);
+                    localStorage.setItem("movieData", JSON.stringify(ele));
+                    localStorage.setItem("movieId", id);
                   }}
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                   src={ele.Cover}

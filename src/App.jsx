@@ -10,6 +10,7 @@ import Home from "./screens/Home";
 import Profile from "./screens/Profile";
 import Trailer from "./screens/Trailer";
 import MovieDetail from "./screens/MovieDetail";
+import WatchMovie from "./screens/WatchMovie";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -23,6 +24,7 @@ function App() {
         <Route path="/user/:id/profile" element={<Profile />} />
         <Route path="/trailer/:trailer" element={<Trailer />} />
         <Route path="/movie/:id" element={<MovieDetail />} />
+        <Route path="/watch-movie/:id" element={<WatchMovie />} />
         {/* <Login /> */}
       </Routes>
     </div>

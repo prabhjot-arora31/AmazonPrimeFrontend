@@ -1,0 +1,22 @@
+.detail-info {
+  padding: "2rem";
+}
+@media (max-width: 650px) {
+  .extra-info {
+    position: relative;
+    /* top: 25px; */
+    /* margin-bottom: 27px; */
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-title {
+    /* margin-top: 200px; */
+    position: relative;
+    top: 29px;
+  }
+  .movie-desc {
+    position: relative;
+    top: 29px;
+  }
+}

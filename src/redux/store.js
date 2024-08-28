@@ -4,10 +4,11 @@ import userReducer from "./reducers/userReducer";
 import movieReducer from "./reducers/movieReducer";
 const rootReducer = combineReducers({
   user: userReducer,
-  movie: movieReducer,
+  movie: movieReducer, // data is in movie.data
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const initialState = localStorage.getItem("id");
+// console.log("movieState: ", JSON.parse(movieState));
 const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(thunk))
