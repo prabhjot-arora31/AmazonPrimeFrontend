@@ -7,7 +7,7 @@ import {
 
 const userLogin = (email, password) => async (dispatch) => {
   try {
-    const { data } = await axios.post(`/api/user/login`, {
+    const { data } = await axios.post(`https://amazon-prime-backend.vercel.app/api/user/login`, {
       email,
       password,
     });
@@ -28,7 +28,7 @@ const userLogin = (email, password) => async (dispatch) => {
 };
 const userRegister = (fullName, email, password) => async (dispatch) => {
   try {
-    const { data } = await axios.post(`/api/user`, {
+    const { data } = await axios.post(`https://amazon-prime-backend.vercel.app/api/user`, {
       fullName,
       email,
       password,
