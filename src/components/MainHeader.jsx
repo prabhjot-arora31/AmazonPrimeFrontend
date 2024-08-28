@@ -17,7 +17,16 @@ const MainHeader = () => {
       }}
     >
       <Header />
-      <button style={{ marginLeft: "20px", marginRight: "20px" }}>
+      <button
+        style={{ marginLeft: "20px", marginRight: "20px" }}
+        onClick={() => {
+          localStorage.removeItem("movieData");
+          localStorage.removeItem("movieId");
+          localStorage.removeItem("name");
+          localStorage.removeItem("token");
+          navigate("/login");
+        }}
+      >
         Logout
       </button>
     </div>
