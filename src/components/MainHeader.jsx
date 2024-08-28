@@ -20,10 +20,10 @@ const MainHeader = () => {
       <button
         style={{ marginLeft: "20px", marginRight: "20px" }}
         onClick={() => {
-          localStorage.removeItem("movieData");
-          localStorage.removeItem("movieId");
-          localStorage.removeItem("name");
-          localStorage.removeItem("token");
+       //   localStorage.removeItem("movieData");
+         // localStorage.removeItem("movieId");
+         // localStorage.removeItem("name");
+        //  localStorage.removeItem("token");
           navigate("/login");
         }}
       >
