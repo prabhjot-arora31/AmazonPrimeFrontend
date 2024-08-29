@@ -38,16 +38,18 @@ const Header = () => {
         <div
           // className="vertical-menu"
           style={{ border: "1px solid white", 
-                  width:'100vw',
+                  width:'97vw',
                   height:'100vh',
                   position:'absolute',
                   top:0,
                   left:0,
                   zIndex:12,
+                  margin:'0 auto',
+                  backgroundColor:'black',
                   padding: "0.4rem", display:'flex',
                  flexDirection:'column',
                   alignItems:'center',
-                  justifyContent:'center',
+                  justifyContent:'start',
                   borderRadius:'5px',
                   gap:'4px'
                  }}
