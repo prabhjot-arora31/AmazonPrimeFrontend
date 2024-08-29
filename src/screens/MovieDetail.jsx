@@ -58,7 +58,7 @@ const MovieDetail = () => {
           bottom: 0,
           left: 0,
           width: '100%',
-          height: '50%', // Adjust height to control how much of the image the gradient covers
+          height: '30%', // Adjust height to control how much of the image the gradient covers
           background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))',
           opacity: 0.9, // Adjust opacity for overall darkness
         }}
@@ -68,7 +68,7 @@ const MovieDetail = () => {
           
         <div
           className="detail-info"
-          style={{ position: "relative", marginTop: "1.2rem", zIndex: 1 , marginLeft:'12px'}}
+          style={{ position: "relative", zIndex: 1 , marginLeft:'12px'}}
         >
           <h1
             className="movie-title"
