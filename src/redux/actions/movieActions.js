@@ -6,7 +6,7 @@ const getMovie = () => async (dispatch) => {
     console.log("res is:", response.data.result.data);
     dispatch({
       type: MOVIE_SUCCESS,
-      payload: response.data.result.data,
+      payload: response.data,
     });
     // localStorage.setItem(
     //   "movieConstants",
