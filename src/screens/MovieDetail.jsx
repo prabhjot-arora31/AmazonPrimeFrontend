@@ -59,7 +59,7 @@ const MovieDetail = () => {
           left: 0,
           width: '100%',
           height: '20%', // Adjust height to control how much of the image the gradient covers
-          background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))',
+          background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0,0,0,1)',
           opacity: 0.9, // Adjust opacity for overall darkness
         }}
     ></div>
