@@ -14,7 +14,8 @@ const Home = () => {
     return state.movie;
   });
   const dispatch = useDispatch();
-  const { data } = movie;
+  const  data  = movie[0].result.data;
+  const data2 = movie[1].result.data
   useEffect(() => {
     dispatch(getMovie());
     if (!localStorage.getItem("token")) {
@@ -46,7 +47,7 @@ const Home = () => {
         Movies
       </h2>
       <Movies data={data} heading="Animation Movies" />
-      <Movies data={data} heading="Adventure Movies" />
+      <Movies data={data2} heading="Adventure Movies" />
     </div>
   );
 };
