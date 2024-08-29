@@ -32,12 +32,12 @@ const MovieDetail = () => {
       <div
         style={{
           // backgroundImage: `linear-gradient(to top right, rgba(0, 0, 0, 1), rgba(0,0,0,0.5), rgba(0, 0, 0, 0)), url(${filteredData.Cover})`,
-          position: "absolute",
+          position: "relative",
        //   padding: "1.4rem",
         }}
       >
         <div style={{
-        position: 'relative',
+        position: 'absolute',
         width: '100%',
         height: '100%',
         marginTop: '10px',
