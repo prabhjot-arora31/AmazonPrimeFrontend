@@ -74,6 +74,7 @@ const MovieDetail = () => {
           <h1
             className="movie-title"
             style={{
+              marginTop:0,
               color: "white",
               textAlign: "left",
               fontSize: "clamp(27px,3vw,3.3vw)",
