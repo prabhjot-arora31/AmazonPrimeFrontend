@@ -25,7 +25,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{  }}>
       <MainHeader />
       {/* <Hero /> */}
       <h2
