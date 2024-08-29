@@ -47,9 +47,9 @@ const Header = () => {
         >
           <button
             className="m-opener"
-            style={{ color: "black", borderRadius:'20px',
-                   width:'30px',
-                    height:'30px'
+            style={{ color: "black", borderRadius:'50%',
+                   width:'33px',
+                    height:'33px'
                    }}
             onClick={() => {
               setVerticalMenuOpened(false);
