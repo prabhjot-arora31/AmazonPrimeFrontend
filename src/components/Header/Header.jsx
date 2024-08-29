@@ -37,7 +37,12 @@ const Header = () => {
       {verticalMenuOpened && (
         <div
           // className="vertical-menu"
-          style={{ border: "1px solid white", padding: "0.4rem" }}
+          style={{ border: "1px solid white", padding: "0.4rem", display:'flex',
+                 flexDirection:'column',
+                  alignItems:'center',
+                  justifyContent:'center',
+                  borderRadius:'5px'
+                 }}
         >
           <button
             className="m-opener"
