@@ -16,7 +16,7 @@ const MovieDetail = () => {
   console.log(filteredData);
   console.log("image bg:", filteredData.Cover && filteredData.Cover);
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div style={{ display: "flex", flexDirection: "column", paddingTop:'7px' }}>
       <div
         style={{
           width: "100%",
