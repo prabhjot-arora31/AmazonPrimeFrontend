@@ -40,6 +40,7 @@ const Header = () => {
           style={{ border: "1px solid white", 
                   width:'100vw',
                   height:'100vh',
+                  position:'absolute',
                   padding: "0.4rem", display:'flex',
                  flexDirection:'column',
                   alignItems:'center',
