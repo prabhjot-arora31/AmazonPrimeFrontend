@@ -63,7 +63,7 @@ const Movies = ({ data, heading }) => {
       
         <div style={{ position: "relative" }}>
           {  
-            mobileCheck() &&
+            !mobileCheck() &&
             <button
             onClick={handlePrev}
             style={{
@@ -82,7 +82,7 @@ const Movies = ({ data, heading }) => {
           </button>
           }
           { 
-            mobileCheck() &&
+            !mobileCheck() &&
           <button
             onClick={() => {
               handleNext();
