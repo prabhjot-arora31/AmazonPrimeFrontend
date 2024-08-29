@@ -7,6 +7,7 @@ const MainHeader = () => {
   return (
     <div
       style={{
+      marginTop:'6px',
         position: "relative",
         top: "-20px",
         display: "flex",
