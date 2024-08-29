@@ -41,12 +41,13 @@ const Header = () => {
                  flexDirection:'column',
                   alignItems:'center',
                   justifyContent:'center',
-                  borderRadius:'5px'
+                  borderRadius:'5px',
+                  gap:'4px'
                  }}
         >
           <button
             className="m-opener"
-            style={{ color: "black", marginBottom: "1.6rem" }}
+            style={{ color: "black", borderRadius:'20px'}}
             onClick={() => {
               setVerticalMenuOpened(false);
             }}
