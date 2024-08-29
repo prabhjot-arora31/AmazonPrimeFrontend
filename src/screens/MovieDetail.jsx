@@ -68,7 +68,7 @@ const MovieDetail = () => {
           
         <div
           className="detail-info"
-          style={{ position: "relative", marginTop: "2.5rem", zIndex: 1 }}
+          style={{ position: "relative", marginTop: "1.2rem", zIndex: 1 , marginLeft:'12px'}}
         >
           <h1
             className="movie-title"
