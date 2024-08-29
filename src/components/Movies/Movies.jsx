@@ -55,6 +55,7 @@ const Movies = ({ data, heading }) => {
           fontWeight: "bold",
           fontSize: "24px",
           marginLeft: "1rem",
+          marginBottom:0
         }}
       >
         {heading}
