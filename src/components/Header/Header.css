@@ -14,6 +14,28 @@
   .menu {
     display: none;
   }
+  .vertical-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .m-opener {
+    display: block;
+  }
+  .menuOpener {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+  .menuOpener p {
+    width: 19px;
+    height: 2px;
+    /* color: white; */
+    background-color: white;
+    margin: 0;
+  }
 }
 .vertical-menu {
   display: none;
@@ -24,6 +46,9 @@
 @media (max-width: 400px) {
   .subs {
     display: none;
+  }
+  .primeLogo {
+    align-self: center;
   }
   .vertical-menu {
     display: flex;

@@ -15,6 +15,7 @@ const Header = () => {
       }}
     >
       <img
+        className="primeLogo"
         style={{ marginRight: "1.2rem" }}
         width={`130px`}
         src="https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png"
@@ -35,7 +36,7 @@ const Header = () => {
       </div>
       {verticalMenuOpened && (
         <div
-          className="vertical-menu"
+          // className="vertical-menu"
           style={{ border: "1px solid white", padding: "0.4rem" }}
         >
           <button
@@ -69,7 +70,13 @@ const Header = () => {
         <p></p> */}
         {!verticalMenuOpened && (
           <button
-            style={{ border: "none", outline: "none" }}
+            style={{
+              border: "none",
+              outline: "none",
+              backgroundColor: "black",
+              color: "white",
+              fontSize: "20px",
+            }}
             onClick={() => {
               setVerticalMenuOpened(true);
             }}

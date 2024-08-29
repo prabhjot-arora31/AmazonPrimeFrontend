@@ -13,7 +13,7 @@ const WatchMovie = () => {
           navigate(`/movie/${localStorage.getItem("movieId")}`);
         }}
         style={{
-          marginTop:'10px',
+          marginTop: "10px",
           padding: "0.5rem 1rem",
           fontSize: "1rem",
           cursor: "pointer",
@@ -30,6 +30,7 @@ const WatchMovie = () => {
           height: "0",
           paddingBottom: "56.25%", // Maintain 16:9 aspect ratio
           margin: "0 auto",
+          border: "1px solid white",
         }}
       >
         <iframe

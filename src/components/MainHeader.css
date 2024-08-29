@@ -5,9 +5,30 @@
   justify-content: "center";
   align-items: "center";
 }
+.main-header2 {
+  justify-content: center;
+  gap: 4rem;
+  margin: 0;
+  /* background-color: rebeccapurple; */
+}
 
 @media (max-width: 1080px) {
   .header-right {
     display: none;
+  }
+}
+@media (max-width: 860px) {
+  .main-header2 {
+    gap: 20px;
+  }
+}
+@media (max-width: 816px) {
+  .main-header2 {
+    gap: 10px;
+  }
+}
+@media (max-width: 409px) {
+  .main-header2 {
+    grid-area: 3px;
   }
 }

@@ -25,18 +25,22 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{ position: "relative", paddingTop: "1.3rem" }}>
+    <div style={{ position: "relative" }}>
       <MainHeader />
-      <Hero />
+      {/* <Hero /> */}
       <h2
         className="text-white"
         style={{
           textAlign: "left",
-          fontSize: "44px",
-          marginBottom: "36px",
+          // fontSize: "4vw", // Use viewport-based font size
+          fontSize: `clamp(26px, 10vw, 29px)`,
+          maxWidth: "25px", // Cap the maximum width
+          minWidth: "22px", // Ensure a minimum size
+          marginBottom: "1px",
           color: "white",
-          fontWeight: "semi-bold",
-          marginLeft: "3.2rem",
+          marginTop: 0,
+          fontWeight: "600",
+          marginLeft: "1rem",
         }}
       >
         Movies

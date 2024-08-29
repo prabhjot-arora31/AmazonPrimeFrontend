@@ -33,50 +33,52 @@ const MovieDetail = () => {
         style={{
           // backgroundImage: `linear-gradient(to top right, rgba(0, 0, 0, 1), rgba(0,0,0,0.5), rgba(0, 0, 0, 0)), url(${filteredData.Cover})`,
           position: "relative",
-       //   padding: "1.4rem",
+          //   padding: "1.4rem",
         }}
       >
-        <div style={{
-        position: 'relative',
-        width: '100%',
-        height: '100%',
-        marginTop: '10px',
-    }}>
-        
-    <img
-        style={{
+        <div
+          style={{
+            position: "relative",
             width: "100%",
             height: "100%",
-            objectFit: "cover", // Ensures the image covers the entire area
-        }}
-        src={filteredData.Cover}
-    />
+            marginTop: "10px",
+          }}
+        >
+          <img
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover", // Ensures the image covers the entire area
+            }}
+            src={filteredData.Cover}
+          />
 
-    <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          width: '100%',
-          height: '30%', // Adjust height to control how much of the image the gradient covers
-          background: 'linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))',
-    
-          opacity: 1, // Adjust opacity for overall darkness
-        }}
-    ></div>
-</div>
-        
-          
+          <div
+            style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "100%",
+              height: "30%", // Adjust height to control how much of the image the gradient covers
+              background:
+                "linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))",
+
+              opacity: 1, // Adjust opacity for overall darkness
+            }}
+          ></div>
+        </div>
+
         <div
           className="detail-info"
-          style={{ position: "relative", zIndex: 1 , marginLeft:'12px'}}
+          style={{ position: "relative", zIndex: 1, marginLeft: "12px" }}
         >
           <h1
             className="movie-title"
             style={{
-              marginTop:0,
+              marginTop: 0,
               color: "white",
               textAlign: "left",
+              marginRight: "15px",
               fontSize: "clamp(27px,3vw,3.3vw)",
             }}
           >
@@ -90,6 +92,7 @@ const MovieDetail = () => {
               fontWeight: "600",
               maxWidth: "590px",
               textAlign: "left",
+              marginRight: "15px",
               fontSize: "clamp(14px,1.1vw,1.4vw)",
             }}
           >
@@ -125,13 +128,12 @@ const MovieDetail = () => {
               textAlign: "left",
               color: "white",
               display: "flex",
-              gap: "40px",
               margin: 0,
               display: "flex",
               flexWrap: "wrap",
-              gap: "1.9rem",
               marginTop: "7px",
               marginBottom: "30px",
+              marginRight: "15px",
             }}
           >
             {filteredData.Genre.split(",").map((ele) => {
@@ -139,6 +141,7 @@ const MovieDetail = () => {
                 <li
                   style={{
                     fontWeight: 700,
+                    marginRight: "28px",
                     textDecoration: "underline",
                     cursor: "pointer",
                   }}
