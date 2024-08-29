@@ -51,7 +51,7 @@ const Header = () => {
                     display:'flex',
                     justifyContent:'center',
                     alignItems:'center',
-                    borderRadius:'40%',
+                    borderRadius:'50%',
                    width:'33px',
                     height:'33px'
                    }}
