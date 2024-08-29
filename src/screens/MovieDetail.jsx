@@ -71,7 +71,7 @@ const MovieDetail = () => {
           left: 0,
           width: '100%',
           height: '50%',
-          background: 'linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0,0,0,0.5), rgba(0,0,0,0.7), rgba(0,0,0,0.9)',
+          background: 'linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0,0,0,0.5), rgba(0,0,0,0.7), rgba(0,0,0,0.9))',
           opacity: 0.8,
         }}
       ></div>
