@@ -1,11 +1,14 @@
-import React from "react";
+import React , {useEffect}from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const WatchMovie = () => {
   const { id } = useParams();
   const url = `https://vidsrc.cc/v2/embed/movie/${id}`;
   const navigate = useNavigate();
-
+  useEffect(()=>{
+    if(!localStorage.getItem('id'))
+     navigate("/");             
+  },[])
   return (
     <div style={{ height: "100vh", boxSizing: "border-box" }}>
       <button
@@ -30,7 +33,7 @@ const WatchMovie = () => {
           height: "0",
           paddingBottom: "56.25%", // Maintain 16:9 aspect ratio
           margin: "0 auto",
-         // border: "1px solid white",
+          border: "1px solid white",
         }}
       >
         <iframe
