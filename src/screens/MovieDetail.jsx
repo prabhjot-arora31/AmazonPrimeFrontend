@@ -37,45 +37,35 @@ const MovieDetail = () => {
         }}
       >
         <div style={{
-        position:'absolute',
-        top:0,
-        left:0,
-        marginTop:'10px',
-        backgroundImage:'linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.8))',
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        marginTop: '10px',
+    }}>
         
-        }}>
-        
-        <img
-          style={{
-            boxShadow:'0 10px 10px -10px #000000',
-           // position: "absolute",
-           // backgroundImage:
-            //  "linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.8))",
-           // top: 0,
-           // left: 0,
-           // marginTop: "10px",
-            // width: "100%",
-            // height: "100%",
-            // objectFit: "cover", // Ensure the image covers the entire area
-            // zIndex: -1,
-            objectFit: "cover",
-            // zIndex: "-1",
-          }}
-          src={filteredData.Cover}
-          width={"100%"}
-        />
-          <div
+    <img
+        style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover", // Ensures the image covers the entire area
+        }}
+        src={filteredData.Cover}
+    />
+
+    <div
         style={{
           position: 'absolute',
-          bottom: '-6px',
+          bottom: 0,
           left: 0,
           width: '100%',
-          height: '50%',
-          background: 'linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3), rgba(0,0,0,0.5), rgba(0,0,0,0.7), rgba(0,0,0,0.9))',
-          opacity: 0.8,
+          height: '50%', // Adjust height to control how much of the image the gradient covers
+          background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0))',
+          opacity: 0.9, // Adjust opacity for overall darkness
         }}
-      ></div>
-          </div>
+    ></div>
+</div>
+        
+          
         <div
           className="detail-info"
           style={{ position: "relative", marginTop: "2.5rem", zIndex: 1 }}
