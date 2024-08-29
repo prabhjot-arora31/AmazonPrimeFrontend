@@ -25,7 +25,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{  }}>
+    <div style={{ paddingTop:'8px' }}>
       <MainHeader />
       {/* <Hero /> */}
       <h2
