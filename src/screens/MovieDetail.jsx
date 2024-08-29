@@ -33,7 +33,7 @@ const MovieDetail = () => {
         style={{
           // backgroundImage: `linear-gradient(to top right, rgba(0, 0, 0, 1), rgba(0,0,0,0.5), rgba(0, 0, 0, 0)), url(${filteredData.Cover})`,
           position: "relative",
-          padding: "1.4rem",
+       //   padding: "1.4rem",
         }}
       >
         <div style={{
