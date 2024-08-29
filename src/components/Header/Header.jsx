@@ -44,6 +44,7 @@ const Header = () => {
                   position:'absolute',
                   top:0,
                   left:0,
+            overflow:'hidden',
                   zIndex:12,
                   margin:'0 auto',
                   backgroundColor:'black',
