@@ -55,17 +55,17 @@ const Movies = ({ data, heading }) => {
           fontWeight: "bold",
           fontSize: "24px",
           marginLeft: "1rem",
-          marginBottom:0
+          marginBottom: "4.6px",
         }}
       >
         {heading}
+        &nbsp; &nbsp; &nbsp;{" "}
+        <span style={{ fontWeight: "700" }}>See more &gt;</span>
       </h5>
 
-      
-        <div style={{ position: "relative" }}>
-          {  
-            !mobileCheck() &&
-            <button
+      <div style={{ position: "relative" }}>
+        {!mobileCheck() && (
+          <button
             onClick={handlePrev}
             style={{
               position: "absolute",
@@ -81,9 +81,8 @@ const Movies = ({ data, heading }) => {
           >
             &lt;
           </button>
-          }
-          { 
-            !mobileCheck() &&
+        )}
+        {!mobileCheck() && (
           <button
             onClick={() => {
               handleNext();
@@ -103,111 +102,108 @@ const Movies = ({ data, heading }) => {
           >
             &gt;
           </button>
-          }
-          <div
-            ref={containerRef}
-            style={{
-              // marginTop: "0.7rem",
-              display: "flex",
-              flexWrap: "nowrap",
-              marginLeft: `${marginLeftOnOrOff == false ? "1.1rem" : 0}`,
-              // marginRight: "3.4rem",
-              gap: "0.7rem",
-              overflowX: "scroll",
-              // marginBottom: `${isHovered.yes ? "4.5rem" : "1.6rem"}`,
-            }}
-          >
-            {data.map((ele, id) => {
-              return (
-                <div
-                  key={id}
-                  className="movie-card"
+        )}
+        <div
+          ref={containerRef}
+          style={{
+            // marginTop: "0.7rem",
+            display: "flex",
+            flexWrap: "nowrap",
+            marginLeft: `${marginLeftOnOrOff == false ? "1.1rem" : 0}`,
+            // marginRight: "3.4rem",
+            gap: "0.7rem",
+            overflowX: "scroll",
+            // marginBottom: `${isHovered.yes ? "4.5rem" : "1.6rem"}`,
+          }}
+        >
+          {data.map((ele, id) => {
+            return (
+              <div
+                key={id}
+                className="movie-card"
+                style={{
+                  zIndex: zIndexProperty.id === id ? zIndexProperty.value : 2,
+                  flexShrink: 0,
+                  transformOrigin: id === 0 ? "left center" : "center center",
+                }}
+                onMouseEnter={() => {
+                  setIsHovered({ id: id, yes: true });
+                  setZIndexProperty({ id: id, value: 10 });
+                }}
+                onMouseLeave={() => {
+                  setIsHovered({ yes: false });
+                  setZIndexProperty({ id: null, value: 2 });
+                }}
+              >
+                <img
+                  onClick={() => {
+                    navigate(`/movie/${id}`);
+                    localStorage.setItem("movieData", JSON.stringify(ele));
+                    localStorage.setItem("movieId", id);
+                  }}
                   style={{
-                    zIndex: zIndexProperty.id === id ? zIndexProperty.value : 2,
-                    flexShrink: 0,
-                    transformOrigin: id === 0 ? "left center" : "center center",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "8px",
                   }}
-                  onMouseEnter={() => {
-                    setIsHovered({ id: id, yes: true });
-                    setZIndexProperty({ id: id, value: 10 });
-                  }}
-                  onMouseLeave={() => {
-                    setIsHovered({ yes: false });
-                    setZIndexProperty({ id: null, value: 2 });
-                  }}
-                >
-                  <img
-                    onClick={() => {
-                      navigate(`/movie/${id}`);
-                      localStorage.setItem("movieData", JSON.stringify(ele));
-                      localStorage.setItem("movieId", id);
-                    }}
+                  src={ele.Cover}
+                  alt={ele.Title}
+                />
+                {isHovered.yes && !mobileCheck() && isHovered.id === id && (
+                  <div
                     style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      borderRadius: "8px",
+                      color: "white",
+                      backgroundColor: "black",
+                      padding: "0.7rem",
+                      display: "flex",
+                      position: "relative",
+                      top: "-7px",
+                      justifyContent: "start",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
                     }}
-                    src={ele.Cover}
-                    alt={ele.Title}
-                  />
-                  {isHovered.yes && !mobileCheck() && isHovered.id === id && (
-                    <div
-                      style={{
-                        color: "white",
-                        backgroundColor: "black",
-                        padding: "0.7rem",
-                        display: "flex",
-                        position: "relative",
-                        top: "-7px",
-                        justifyContent: "start",
-                        flexDirection: "column",
-                        alignItems: "flex-start",
-                      }}
-                    >
-                      <h6 style={{ textAlign: "left" }}>{ele.Title}</h6>
-                      <div className="movie-div-buttons">
-                        <button
-                          onClick={() => {
-                            navigate(
-                              `/trailer/${extractYouTubeId(ele.Trailer)}`
-                            );
+                  >
+                    <h6 style={{ textAlign: "left" }}>{ele.Title}</h6>
+                    <div className="movie-div-buttons">
+                      <button
+                        onClick={() => {
+                          navigate(`/trailer/${extractYouTubeId(ele.Trailer)}`);
+                        }}
+                      >
+                        <i
+                          className="fa-solid fa-play"
+                          style={{
+                            position: "relative",
+                            left: "-5.7px",
+                            top: "-1.4px",
+                            fontSize: "20px",
                           }}
-                        >
-                          <i
-                            className="fa-solid fa-play"
-                            style={{
-                              position: "relative",
-                              left: "-5.7px",
-                              top: "-1.4px",
-                              fontSize: "20px",
-                            }}
-                          ></i>
-                        </button>
-                      </div>
-                      <div className="extra-info">
-                        <p>{ele.Release}</p>
-                        <p>
-                          {ele.Duration > 60
-                            ? `1 hr ${60 - Number(ele.Duration)} min`
-                            : ele.Duration}
-                        </p>
-                      </div>
-                      <div className="desc">
-                        <p>
-                          {ele.Description.length > 90
-                            ? `${ele.Description.substr(0, 120)}...`
-                            : ele.Description}
-                        </p>
-                      </div>
+                        ></i>
+                      </button>
                     </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                    <div className="extra-info">
+                      <p>{ele.Release}</p>
+                      <p>
+                        {ele.Duration > 60
+                          ? `1 hr ${60 - Number(ele.Duration)} min`
+                          : ele.Duration}
+                      </p>
+                    </div>
+                    <div className="desc">
+                      <p>
+                        {ele.Description.length > 90
+                          ? `${ele.Description.substr(0, 120)}...`
+                          : ele.Description}
+                      </p>
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
-      
+      </div>
     </div>
   );
 };

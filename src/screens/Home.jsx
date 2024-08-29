@@ -14,8 +14,17 @@ const Home = () => {
     return state.movie;
   });
   const dispatch = useDispatch();
-  const  data  = movie[0].result.data;
-  const data2 = movie[1].result.data
+  console.log("MOVIE: ", movie);
+  // const data = movie[0].result.data;
+  // const data2 = movie[1].result.data;
+  // console.log(movie.data[0].result.data);
+  const data = movie.data[0].result.data;
+  const data2 = movie.data[1].result.data;
+  // const data = [];
+  // const data2 = [];
+  // const data3 = movie.data[2].result.data;
+  // const data4 = movie.data[3].result.data;
+  // const data5 = movie.data[4].result.data;
   useEffect(() => {
     dispatch(getMovie());
     if (!localStorage.getItem("token")) {
@@ -26,7 +35,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{ paddingTop:'30px' , minHeight:'100vh'}}>
+    <div style={{ paddingTop: "30px", minHeight: "100vh" }}>
       <MainHeader />
       {/* <Hero /> */}
       <h2
@@ -48,6 +57,9 @@ const Home = () => {
       </h2>
       <Movies data={data} heading="Animation Movies" />
       <Movies data={data2} heading="Adventure Movies" />
+      {/* <Movies data={data3} heading="Crime Movies" />
+      <Movies data={data4} heading="Horroe Movies" />
+      <Movies data={data5} heading="Romance Movies" /> */}
     </div>
   );
 };
