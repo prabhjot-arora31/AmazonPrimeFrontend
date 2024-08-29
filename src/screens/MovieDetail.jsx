@@ -64,6 +64,17 @@ const MovieDetail = () => {
           src={filteredData.Cover}
           width={"100%"}
         />
+          <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '50%',
+          background: 'linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8))',
+          opacity: 0.8,
+        }}
+      ></div>
           </div>
         <div
           className="detail-info"
