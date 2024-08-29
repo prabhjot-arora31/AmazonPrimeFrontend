@@ -47,7 +47,11 @@ const Header = () => {
         >
           <button
             className="m-opener"
-            style={{ color: "black", borderRadius:'50%',
+            style={{ color: "black", 
+                    display:'flex',
+                    justifyContent:'center',
+                    alignItems:'center',
+                    borderRadius:'40%',
                    width:'33px',
                     height:'33px'
                    }}
