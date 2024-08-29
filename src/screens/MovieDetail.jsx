@@ -37,7 +37,7 @@ const MovieDetail = () => {
         }}
       >
         <div style={{
-        position: 'absolute',
+        position: 'relative',
         width: '100%',
         height: '100%',
         marginTop: '10px',
