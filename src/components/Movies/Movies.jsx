@@ -60,9 +60,11 @@ const Movies = ({ data, heading }) => {
         {heading}
       </h5>
 
-      {mobileCheck() == false && (
+      
         <div style={{ position: "relative" }}>
-          <button
+          {  
+            mobileCheck() &&
+            <button
             onClick={handlePrev}
             style={{
               position: "absolute",
@@ -78,6 +80,9 @@ const Movies = ({ data, heading }) => {
           >
             &lt;
           </button>
+          }
+          { 
+            mobileCheck() &&
           <button
             onClick={() => {
               handleNext();
@@ -97,6 +102,7 @@ const Movies = ({ data, heading }) => {
           >
             &gt;
           </button>
+          }
           <div
             ref={containerRef}
             style={{
@@ -200,7 +206,7 @@ const Movies = ({ data, heading }) => {
             })}
           </div>
         </div>
-      )}
+      
     </div>
   );
 };
