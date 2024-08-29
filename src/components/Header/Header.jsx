@@ -37,7 +37,7 @@ const Header = () => {
       {verticalMenuOpened && (
         <div
           // className="vertical-menu"
-          style={{ border: "1px solid white", 
+          style={{ 
                   width:'97vw',
                   height:'100vh',
                   position:'absolute',
