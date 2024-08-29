@@ -47,6 +47,7 @@ const MovieDetail = () => {
         
         <img
           style={{
+            boxShadow:'0 10px 10px -10px #000000',
            // position: "absolute",
            // backgroundImage:
             //  "linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.8))",
