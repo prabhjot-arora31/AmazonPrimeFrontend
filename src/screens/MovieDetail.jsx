@@ -90,7 +90,7 @@ const MovieDetail = () => {
               fontWeight: "600",
               maxWidth: "590px",
               textAlign: "left",
-              fontSize: "clamp(14px,1.1vw,1.7vw)",
+              fontSize: "clamp(14px,1.1vw,1.4vw)",
             }}
           >
             {filteredData.Description}
