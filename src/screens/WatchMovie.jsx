@@ -30,12 +30,13 @@ const WatchMovie = () => {
           height: "0",
           paddingBottom: "56.25%", // Maintain 16:9 aspect ratio
           margin: "0 auto",
-          border: "1px solid white",
+         // border: "1px solid white",
         }}
       >
         <iframe
           src={url}
           style={{
+            border:'1px solid white',
             position: "absolute",
             top: 0,
             left: 0,
