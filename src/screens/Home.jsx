@@ -18,8 +18,8 @@ const Home = () => {
   // const data = movie[0].result.data;
   // const data2 = movie[1].result.data;
   // console.log(movie.data[0].result.data);
-  const data = movie.data[0].result.data;
-  const data2 = movie.data[1].result.data;
+  const data = movie.data[0] ? movie.data[0].result.data : [];
+  const data2 = movie.data[1] ? movie.data[1].result.data : [];
   // const data = [];
   // const data2 = [];
   // const data3 = movie.data[2].result.data;
