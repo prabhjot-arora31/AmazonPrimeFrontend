@@ -36,14 +36,23 @@ const MovieDetail = () => {
           padding: "1.4rem",
         }}
       >
+        <div style={{
+        position:'absolute',
+        top:0,
+        left:0,
+        marginTop:'10px',
+        backgroundImage:'linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.8))',
+        
+        }}>
+        
         <img
           style={{
-            position: "absolute",
-            backgroundImage:
-              "linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.8))",
-            top: 0,
-            left: 0,
-            marginTop: "10px",
+           // position: "absolute",
+           // backgroundImage:
+            //  "linear-gradient(to bottom right, rgba(0,0,0,0), rgba(0,0,0,0.8))",
+           // top: 0,
+           // left: 0,
+           // marginTop: "10px",
             // width: "100%",
             // height: "100%",
             // objectFit: "cover", // Ensure the image covers the entire area
@@ -54,6 +63,7 @@ const MovieDetail = () => {
           src={filteredData.Cover}
           width={"100%"}
         />
+          </div>
         <div
           className="detail-info"
           style={{ position: "relative", marginTop: "2.5rem", zIndex: 1 }}
