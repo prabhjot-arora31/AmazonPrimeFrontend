@@ -12,6 +12,7 @@ const Header = () => {
         alignItems: "center",
         gap: "2.4rem",
         marginTop: 0,
+        overflow:'hidden'
       }}
     >
       <img
