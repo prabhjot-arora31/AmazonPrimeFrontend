@@ -147,7 +147,7 @@ const Movies = ({ data, heading }) => {
                     objectFit: "cover",
                     borderRadius: "8px",
                   }}
-                  src={ele.Cover}
+                  src=`${ele.Cover ? ele.cover : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMEsm4mJqn_kXFCHwwjOwr5lPBe0kpOZy09Xp0HXGWjEgJV_DZ34lPYzGg&s=10'}`
                   alt={ele.Title}
                 />
                 {isHovered.yes && !mobileCheck() && isHovered.id === id && (
