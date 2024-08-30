@@ -1,19 +1,25 @@
-import React , {useEffect}from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const WatchMovie = () => {
   const { id } = useParams();
   const url = `https://vidsrc.cc/v2/embed/movie/${id}`;
   const navigate = useNavigate();
-  useEffect(()=>{
-    if(!localStorage.getItem('id'))
-     navigate("/");             
-  },[])
+  useEffect(() => {
+    if (!localStorage.getItem("id")) navigate("/");
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={{ height: "100vh", boxSizing: "border-box" }}>
       <button
         onClick={() => {
-          navigate(`/movie/${localStorage.getItem("movieId")}`);
+          if (localStorage.getItem("movieCategory"))
+            navigate(
+              `/movie/${localStorage.getItem("movieId")}/${localStorage.getItem(
+                "movieCategory"
+              )}`
+            );
+          else navigate(`/movie/${localStorage.getItem("movieId")}`);
         }}
         style={{
           marginTop: "10px",
@@ -39,7 +45,7 @@ const WatchMovie = () => {
         <iframe
           src={url}
           style={{
-            border:'1px solid white',
+            border: "1px solid white",
             position: "absolute",
             top: 0,
             left: 0,

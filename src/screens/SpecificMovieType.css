@@ -1,0 +1,82 @@
+.movie-card-specific {
+  width: 220px;
+  overflow: hidden;
+  height: 150px;
+}
+.movie-card-specific div {
+  color: white;
+}
+.movie-card-specific img {
+  width: 100%;
+  height: 100%;
+}
+.extraInfo {
+  width: 300px;
+}
+.extraInfo h3 {
+  width: 105px;
+  font-size: 17.3px;
+}
+.s-header {
+  font-size: 32px;
+}
+@media (max-width: 492px) {
+  .movie-card-specific {
+    /* width: 100%; */
+    overflow: visible;
+    gap: 20px;
+    margin-right: 0;
+    padding-right: 0;
+    /* margin: 0 auto; */
+  }
+}
+@media (max-width: 370px) {
+  .movie-card-specific {
+    width: 170px;
+    height: 100px;
+  }
+}
+@media (max-width: 325px) {
+  .movie-card-specific {
+    width: 140px;
+    height: 87px;
+  }
+  .s-header {
+    font-size: 27.6px;
+  }
+}
+@media (max-width: 296px) {
+  .movie-card-specific {
+    width: 123px;
+    height: 67px;
+    gap: 10px;
+  }
+  .s-header {
+    font-size: 23.6px;
+  }
+  .extraInfo h3 {
+    /* width: 105px; */
+    font-size: 13.3px;
+  }
+}
+@media (max-width: 273px) {
+  /* .movie-card-specific {
+        width: 100px;
+        height: 67px;
+      } */
+  .extraInfo h3 {
+    /* width: 105px; */
+    font-size: 10.3px;
+    margin-left: 0;
+  }
+  .s-header {
+    font-size: 18.6px;
+  }
+}
+@media (max-width: 260px) {
+  .movie-card-specific {
+    /* width: 123px;
+    height: 67px; */
+    gap: 6px;
+  }
+}

@@ -22,7 +22,7 @@ const userLogin = (email, password, navigate) => async (dispatch) => {
       type: USER_LOGIN,
       payload: data,
     });
-    navigate("/home");
+    navigate("/");
   } catch (err) {
     if (err.response) {
       console.log("LOGIN: ", err.response.data);

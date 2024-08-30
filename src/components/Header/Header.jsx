@@ -12,7 +12,7 @@ const Header = () => {
         alignItems: "center",
         gap: "2.4rem",
         marginTop: 0,
-        overflow:'hidden'
+        overflow: "hidden",
       }}
     >
       <img
@@ -26,46 +26,55 @@ const Header = () => {
         <h3
           className="header-text"
           onClick={() => {
-            navigate("/home");
+            navigate("/");
           }}
         >
           Home
         </h3>
-        <h3 className="header-text">Movies</h3>
+        <h3
+          className="header-text"
+          onClick={() => {
+            navigate("/movies");
+          }}
+        >
+          Movies
+        </h3>
         <h3 className="header-text">TV Shows</h3>
         <h3 className="header-text">Live TV</h3>
       </div>
       {verticalMenuOpened && (
         <div
           // className="vertical-menu"
-          style={{ 
-                  width:'97vw',
-                  height:'100vh',
-                  position:'absolute',
-                  top:0,
-                  left:0,
-            overflow:'hidden',
-                  zIndex:12,
-                  margin:'0 auto',
-                  backgroundColor:'black',
-                  padding: "0.4rem", display:'flex',
-                 flexDirection:'column',
-                  alignItems:'center',
-                  justifyContent:'start',
-                  borderRadius:'5px',
-                  gap:'4px'
-                 }}
+          style={{
+            width: "97vw",
+            height: "100vh",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            overflow: "hidden",
+            zIndex: 12,
+            margin: "0 auto",
+            backgroundColor: "black",
+            padding: "0.4rem",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "start",
+            borderRadius: "5px",
+            gap: "4px",
+          }}
         >
           <button
             className="m-opener"
-            style={{ color: "black", 
-                    display:'flex',
-                    justifyContent:'center',
-                    alignItems:'center',
-                    borderRadius:'50%',
-                   width:'33px',
-                    height:'33px'
-                   }}
+            style={{
+              color: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "50%",
+              width: "33px",
+              height: "33px",
+            }}
             onClick={() => {
               setVerticalMenuOpened(false);
             }}
@@ -76,12 +85,19 @@ const Header = () => {
             <h3
               className="header-text"
               onClick={() => {
-                navigate("/home");
+                navigate("/");
               }}
             >
               Home
             </h3>
-            <h3 className="header-text">Movies</h3>
+            <h3
+              className="header-text"
+              onClick={() => {
+                navigate("/movies");
+              }}
+            >
+              Movies
+            </h3>
             <h3 className="header-text">TV Shows</h3>
             <h3 className="header-text">Live TV</h3>
           </div>

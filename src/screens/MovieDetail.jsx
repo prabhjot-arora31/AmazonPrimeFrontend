@@ -1,22 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header/Header";
 import MainHeader from "../components/MainHeader";
 import "./MovieDetail.css";
 const MovieDetail = () => {
-  const { id } = useParams();
+  const { id, genre } = useParams();
   const movie = useSelector((state) => {
     return state.movie;
   });
   const { data } = movie;
+  const [filteredData, setFilteredData] = useState({ Genre: "" });
+
   // const filteredData = data.filter((rData, fId) => fId == id && rData)[0];
-  const filteredData = JSON.parse(localStorage.getItem("movieData"));
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    console.log(filteredData);
+    console.log("PARAMS ARE:", id, " ", genre);
+    console.log("image bg:", filteredData.Cover && filteredData.Cover);
+    if (genre) {
+      try {
+        import(`../data/${genre.toLowerCase()}_movies.json`).then((data) => {
+          // console.log(data.default.result.data);
+          data.default.result.data.map((movie) => {
+            console.log(typeof movie.movieId);
+            console.log(typeof id);
+          });
+          const d = data.default.result.data.filter((movie) => {
+            return parseInt(movie.movieId) == parseInt(id) && movie;
+          });
+          console.log("d is:", d);
+          setFilteredData(d[0]);
+        });
+      } catch (err) {
+        console.log(err.message);
+      }
+      // filteredData = {};
+      console.log("genre is there");
+    } else {
+      console.log("genre is not there");
+      console.log(JSON.parse(localStorage.getItem("movieData")));
+      setFilteredData(JSON.parse(localStorage.getItem("movieData")));
+    }
+    return () => {};
+  }, []);
+  // var filteredData;
+
   const navigate = useNavigate();
-  console.log(filteredData);
-  console.log("image bg:", filteredData.Cover && filteredData.Cover);
+
   return (
-    <div style={{ display: "flex", flexDirection: "column", paddingTop:'7px' }}>
+    <div
+      style={{ display: "flex", flexDirection: "column", paddingTop: "7px" }}
+    >
       <div
         style={{
           width: "100%",
@@ -136,21 +171,23 @@ const MovieDetail = () => {
               marginRight: "15px",
             }}
           >
-            {filteredData.Genre.split(",").map((ele) => {
-              return (
-                <li
-                  style={{
-                    fontWeight: 700,
-                    marginRight: "28px",
-                    textDecoration: "underline",
-                    cursor: "pointer",
-                  }}
-                  key={ele}
-                >
-                  {ele.trim()}
-                </li>
-              );
-            })}
+            {filteredData.Genre &&
+              filteredData.Genre.length > 0 &&
+              filteredData.Genre.split(",").map((ele) => {
+                return (
+                  <li
+                    style={{
+                      fontWeight: 700,
+                      marginRight: "28px",
+                      textDecoration: "underline",
+                      cursor: "pointer",
+                    }}
+                    key={ele}
+                  >
+                    {ele.trim()}
+                  </li>
+                );
+              })}
           </ul>
           <div
             style={{
@@ -264,19 +301,21 @@ const MovieDetail = () => {
                 gap: "4px",
               }}
             >
-              {filteredData.Actor.split(",").map((ele) => {
-                return (
-                  <p
-                    style={{
-                      margin: 0,
-                      color: "gray",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    {ele + ","}
-                  </p>
-                );
-              })}
+              {filteredData.Actor &&
+                filteredData.Actor.length > 0 &&
+                filteredData.Actor.split(",").map((ele) => {
+                  return (
+                    <p
+                      style={{
+                        margin: 0,
+                        color: "gray",
+                        textDecoration: "underline",
+                      }}
+                    >
+                      {ele + ","}
+                    </p>
+                  );
+                })}
             </p>
           </div>
         </div>

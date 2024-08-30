@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Movies.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Movies = ({ data, heading }) => {
   const [itemsToShow, setItemsToShow] = useState(3); // Default value
@@ -9,11 +9,11 @@ const Movies = ({ data, heading }) => {
   const [zIndexProperty, setZIndexProperty] = useState({ id: null, value: 2 });
   const navigate = useNavigate();
   const [marginLeftOnOrOff, setMarginLeftOnOrOff] = useState(false); // Default
-  const extractYouTubeId = (url) => {
-    const urlParams = new URLSearchParams(new URL(url).search);
-    return urlParams.get("v"); // Extracting 'v' parameter for YouTube video ID
-  };
-
+  // const extractYouTubeId = (url) => {
+  //   const urlParams = new URLSearchParams(new URL(url).search);
+  //   return urlParams.get("v"); // Extracting 'v' parameter for YouTube video ID
+  // };
+  // KEY: 4b90509a0a62bb1b0353
   const mobileCheck = () => {
     return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/.test(
       navigator.userAgent
@@ -21,7 +21,6 @@ const Movies = ({ data, heading }) => {
   };
   useEffect(() => {
     console.log(containerRef);
-
     return () => {};
   }, []);
 
@@ -47,8 +46,6 @@ const Movies = ({ data, heading }) => {
   };
 
   return (
-    
-      
     <div style={{ position: "relative" }}>
       <h5
         style={{
@@ -62,7 +59,14 @@ const Movies = ({ data, heading }) => {
       >
         {heading}
         &nbsp; &nbsp; &nbsp;{" "}
-        <span style={{ fontWeight: "700" }}>See more &gt;</span>
+        <span
+          style={{ fontWeight: "700", fontSize: "18.6px", cursor: "pointer" }}
+          onClick={() => {
+            navigate(`/browse-more/${heading.split(" ")[0]}`);
+          }}
+        >
+          See more &gt;
+        </span>
       </h5>
 
       <div style={{ position: "relative" }}>
@@ -118,100 +122,117 @@ const Movies = ({ data, heading }) => {
             // marginBottom: `${isHovered.yes ? "4.5rem" : "1.6rem"}`,
           }}
         >
-          {data.map((ele, id) => {
-            return (
-            <> {
-              header != "Animation Movies" && id!=0 &&
-              <div
-                key={id}
-                className="movie-card"
-                style={{
-                  zIndex: zIndexProperty.id === id ? zIndexProperty.value : 2,
-                  flexShrink: 0,
-                  transformOrigin: id === 0 ? "left center" : "center center",
-                }}
-                onMouseEnter={() => {
-                  setIsHovered({ id: id, yes: true });
-                  setZIndexProperty({ id: id, value: 10 });
-                }}
-                onMouseLeave={() => {
-                  setIsHovered({ yes: false });
-                  setZIndexProperty({ id: null, value: 2 });
-                }}
-              >
-                <img
-                  onClick={() => {
-                    navigate(`/movie/${id}`);
-                    localStorage.setItem("movieData", JSON.stringify(ele));
-                    localStorage.setItem("movieId", id);
-                  }}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                  }}
-                  src=`${ele.Cover ? ele.cover : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMEsm4mJqn_kXFCHwwjOwr5lPBe0kpOZy09Xp0HXGWjEgJV_DZ34lPYzGg&s=10'}`
-                  alt={ele.Title}
-                />
-                {isHovered.yes && !mobileCheck() && isHovered.id === id && (
-                  <div
-                    style={{
-                      color: "white",
-                      backgroundColor: "black",
-                      padding: "0.7rem",
-                      display: "flex",
-                      position: "relative",
-                      top: "-7px",
-                      justifyContent: "start",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                    }}
-                  >
-                    <h6 style={{ textAlign: "left" }}>{ele.Title}</h6>
-                    <div className="movie-div-buttons">
-                      <button
+          {data &&
+            data.slice(0, 17).map((ele, id) => {
+              return (
+                <>
+                  {" "}
+                  {/* heading != "Animation Movies" && id != 0 &&  */}
+                  {
+                    <div
+                      key={id}
+                      className="movie-card"
+                      style={{
+                        zIndex:
+                          zIndexProperty.id === id ? zIndexProperty.value : 2,
+                        flexShrink: 0,
+                        transformOrigin:
+                          id === 0 ? "left center" : "center center",
+                      }}
+                      onMouseEnter={() => {
+                        // setIsHovered({ id: id, yes: true });
+                        setZIndexProperty({ id: id, value: 10 });
+                      }}
+                      onMouseLeave={() => {
+                        // setIsHovered({ yes: false });
+                        setZIndexProperty({ id: null, value: 2 });
+                      }}
+                    >
+                      <img
                         onClick={() => {
-                          navigate(`/trailer/${extractYouTubeId(ele.Trailer)}`);
+                          navigate(`/movie/${id}`);
+                          localStorage.removeItem("movieCategory");
+                          localStorage.setItem(
+                            "movieData",
+                            JSON.stringify(ele)
+                          );
+                          localStorage.setItem("movieId", id);
                         }}
-                      >
-                        <i
-                          className="fa-solid fa-play"
-                          style={{
-                            position: "relative",
-                            left: "-5.7px",
-                            top: "-1.4px",
-                            fontSize: "20px",
-                          }}
-                        ></i>
-                      </button>
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          borderRadius: "8px",
+                        }}
+                        // src={`${
+                        //   ele.Cover
+                        //     ? ele.cover
+                        //     : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMEsm4mJqn_kXFCHwwjOwr5lPBe0kpOZy09Xp0HXGWjEgJV_DZ34lPYzGg&s=10"
+                        // }`}
+                        src={ele.Cover}
+                        alt={ele.Title}
+                      />
+                      {isHovered.yes &&
+                        !mobileCheck() &&
+                        isHovered.id === id && (
+                          <div
+                            style={{
+                              color: "white",
+                              backgroundColor: "black",
+                              padding: "0.7rem",
+                              display: "flex",
+                              position: "relative",
+                              top: "-7px",
+                              justifyContent: "start",
+                              flexDirection: "column",
+                              alignItems: "flex-start",
+                            }}
+                          >
+                            <h6 style={{ textAlign: "left" }}>{ele.Title}</h6>
+                            <div className="movie-div-buttons">
+                              <button
+                                onClick={() => {
+                                  navigate(
+                                    `/trailer/${extractYouTubeId(ele.Trailer)}`
+                                  );
+                                }}
+                              >
+                                <i
+                                  className="fa-solid fa-play"
+                                  style={{
+                                    position: "relative",
+                                    left: "-5.7px",
+                                    top: "-1.4px",
+                                    fontSize: "20px",
+                                  }}
+                                ></i>
+                              </button>
+                            </div>
+                            <div className="extra-info">
+                              <p>{ele.Release}</p>
+                              <p>
+                                {ele.Duration > 60
+                                  ? `1 hr ${60 - Number(ele.Duration)} min`
+                                  : ele.Duration}
+                              </p>
+                            </div>
+                            <div className="desc">
+                              <p>
+                                {ele.Description.length > 90
+                                  ? `${ele.Description.substr(0, 120)}...`
+                                  : ele.Description}
+                              </p>
+                            </div>
+                          </div>
+                        )}
                     </div>
-                    <div className="extra-info">
-                      <p>{ele.Release}</p>
-                      <p>
-                        {ele.Duration > 60
-                          ? `1 hr ${60 - Number(ele.Duration)} min`
-                          : ele.Duration}
-                      </p>
-                    </div>
-                    <div className="desc">
-                      <p>
-                        {ele.Description.length > 90
-                          ? `${ele.Description.substr(0, 120)}...`
-                          : ele.Description}
-                      </p>
-                    </div>
-                  </div>
-                
-                )}
-              </div>
-            </>
-            );
-          })}
+                  }
+                </>
+              );
+            })}
         </div>
       </div>
     </div>
-    
   );
 };
 

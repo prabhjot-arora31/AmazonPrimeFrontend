@@ -37,7 +37,7 @@ const Login = () => {
   //   }
   useEffect(() => {
     if (localStorage.getItem("id")) {
-      navigate(`/home`);
+      navigate(`/movies`);
     }
   }, []);
 
@@ -244,7 +244,7 @@ const Login = () => {
           New to amazon?
         </p>
         <Link
-          to="/"
+          to="/register"
           style={{
             color: "black",
             marginTop: "0.5rem",
