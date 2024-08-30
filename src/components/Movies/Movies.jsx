@@ -47,6 +47,8 @@ const Movies = ({ data, heading }) => {
   };
 
   return (
+    
+      
     <div style={{ position: "relative" }}>
       <h5
         style={{
@@ -118,6 +120,8 @@ const Movies = ({ data, heading }) => {
         >
           {data.map((ele, id) => {
             return (
+            <> {
+              header != "Animation Movies" && id!=0 &&
               <div
                 key={id}
                 className="movie-card"
@@ -198,13 +202,16 @@ const Movies = ({ data, heading }) => {
                       </p>
                     </div>
                   </div>
+                
                 )}
               </div>
+            </>
             );
           })}
         </div>
       </div>
     </div>
+    
   );
 };
 
