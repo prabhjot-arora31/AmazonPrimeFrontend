@@ -227,7 +227,8 @@ const MovieDetail = () => {
               onClick={() => {
                 // window.open(filteredData.Watch, "_blank");
                 const idOfUrl = filteredData.Watch.split("/")[6];
-                // navigate(`/watch-movie/${idOfUrl}`);
+                if(id != "spotlight")
+                 navigate(`/watch-movie/${idOfUrl}`);
               }}
             >
               {id != "spotlight" ? (
