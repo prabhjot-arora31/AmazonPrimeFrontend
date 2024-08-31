@@ -11,6 +11,10 @@ import data2 from "../data/adventure_movies.json";
 import data3 from "../data/crime_movies.json";
 import data4 from "../data/horror_movies.json";
 import data5 from "../data/romance_movies.json";
+import data6 from "../data/family_movies.json";
+import data7 from "../data/marvel_movies.json";
+import Spotlight from "../components/Spotlight/Spotlight";
+import data8 from "../data/spotlight_movies.json";
 // import data6 from "../data/animation_movies.json";
 const Movies = () => {
   const navigate = useNavigate();
@@ -66,7 +70,10 @@ const Movies = () => {
       <MoviesC data={data2.result.data} heading="Adventure Movies" />
       <MoviesC data={data3.result.data} heading="Crime Movies" />
       <MoviesC data={data4.result.data} heading="Horror Movies" />
-      <MoviesC data={data5.result.data} heading="Romance Movies" />
+      <MoviesC data={[...data5.result.data]} heading="Romance Movies" />
+      <MoviesC data={[...data6.result.data]} heading="Family Movies" />
+      <MoviesC data={data7.result.data} heading="Marvel Movies" />
+      <Spotlight data={data8.result.data} heading={"In the Spotlight"} />
     </div>
   );
 };

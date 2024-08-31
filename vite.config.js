@@ -6,18 +6,18 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/movies": {
-        target: "https://amazon-prime-backend.vercel.app/",
-        changeOrigin: true,
-      },
-      "/api/user": {
-        target: "https://amazon-prime-backend.vercel.app/",
-        changeOrigin: true,
-      },
-      "/api/user/login": {
-        target: "https://amazon-prime-backend.vercel.app/",
-        changeOrigin: true,
-      },
+      // "/movies": {
+      //   target: "https://amazon-prime-backend.vercel.app/",
+      //   changeOrigin: true,
+      // },
+      // "/api/user": {
+      //   target: "https://amazon-prime-backend.vercel.app/",
+      //   changeOrigin: true,
+      // },
+      // "/api/user/login": {
+      //   target: "https://amazon-prime-backend.vercel.app/",
+      //   changeOrigin: true,
+      // },
     },
   },
 });

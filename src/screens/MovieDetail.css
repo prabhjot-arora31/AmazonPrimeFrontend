@@ -1,4 +1,6 @@
 .detail-info {
+  /* marginTop: "-30.746px", */
+  margin-top: -490.746px;
   padding: "2rem";
 }
 @media (max-width: 650px) {
@@ -8,7 +10,36 @@
     /* margin-bottom: 27px; */
   }
 }
-
+@media (max-width: 900px) {
+  .detail-info {
+    margin-top: -380px;
+  }
+}
+@media (max-width: 790px) {
+  .detail-info {
+    margin-top: -342px;
+  }
+}
+@media (max-width: 725px) {
+  .detail-info {
+    margin-top: -276px;
+  }
+}
+@media (max-width: 695px) {
+  .detail-info {
+    margin-top: -178.2px;
+  }
+}
+@media (max-width: 600px) {
+  .detail-info {
+    margin-top: -113px;
+  }
+}
+@media (max-width: 420px) {
+  .detail-info {
+    margin-top: -87px;
+  }
+}
 @media (max-width: 600px) {
   .movie-title {
     /* margin-top: 200px; */

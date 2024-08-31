@@ -1,0 +1,128 @@
+{
+    "version": "v1.0",
+    "result": {
+      "page": 1,
+      "pages": 308,
+      "count": 35,
+      "data": [
+        {
+          "imdb_id": "tt14539740",
+          "Id": "1630856838",
+          "Genre": "Science Fiction, Action, Adventure",
+          "Actor": "Rebecca Hall, Brian Tyree Henry, Dan Stevens",
+          "Director": "Adam Wingard",
+          "Country": "United States",
+          "Duration": 115,
+          "Release": "2024",
+          "Rating": 2176.392,
+          "Cover": "https://images.moviesanywhere.com/c1e721db984b57cf850fc84d1ae058f1/5f2c0ab1-ec7e-4a46-aebd-041d9985ad54.jpg",
+          "Title": "Godzilla x Kong: The New Empire",
+          "Watch": "https://vidsrc.cc/v2/embed/movie/823464",
+          "Thumbnail": "https://img.cdno.my.id/thumb/w_200/h_300/godzilla-x-kong-the-new-empire-1630856838.jpg",
+          "Description": "Following their explosive showdown, Godzilla and Kong must reunite against a colossal undiscovered threat hidden within our world, challenging their very existence – and our own.",
+          "Trailer": "https://www.youtube.com/watch?v=LJRdlekz7uo",
+          "movieId": 823464
+        },
+        
+        {
+          "imdb_id": "tt1259571",
+          "Id": 18239,
+          "movieId": 18239,
+          "Genre": "Adventure, Fantasy, Drama, Romance",
+          "Director": "Chris Weitz",
+          "Actor": "Kristen Stewart, Robert Pattinson, Taylor Lautner",
+          "Title": "The Twilight Saga: New Moon",
+          "Duration": 131,
+          "Release": "2009",
+          "Description": "Forks, Washington resident Bella Swan is reeling from the departure of her vampire love, Edward Cullen, and finds comfort in her friendship with Jacob Black, a werewolf. But before she knows it, she's thrust into a centuries-old conflict, and her desire to be with Edward at any cost leads her to take greater and greater risks.",
+          "Rating": 67.351,
+          "Trailer": "https://www.youtube.com/watch?v=BNi-ebCWXos",
+          "Country": "United States",
+          "Thumbnail": "https://image.tmdb.org/t/p/w450_and_h300_bestv2/k2qTooPlHffgNABNWxeJdGMglPK.jpg",
+          "Cover": "https://image.tmdb.org/t/p/original/642bUkzkg2yTcxofvpAWOgsspR1.jpg",
+          "Watch": "https://vidsrc.cc/v2/embed/movie/18239"
+        },
+        
+        {
+          "imdb_id": "tt5034838",
+          "Id": 399566,
+          "movieId": 399566,
+          "Genre": "Action, Science Fiction, Adventure",
+          "Director": "Adam Wingard",
+          "Actor": "Alexander Skarsgård, Rebecca Hall, Kaylee Hottle",
+          "Title": "Godzilla vs. Kong",
+          "Duration": 114,
+          "Release": "2021",
+          "Description": "In a time when monsters walk the Earth, humanity’s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
+          "Rating": 107.755,
+          "Trailer": "https://www.youtube.com/watch?v=SGjwzAfZX5w",
+          "Country": "United States",
+          "Thumbnail": "https://image.tmdb.org/t/p/w450_and_h300_bestv2/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
+          "Cover": "https://m.media-amazon.com/images/M/MV5BZmYzMzU4NjctNDI0Mi00MGExLWI3ZDQtYzQzYThmYzc2ZmNjXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
+          "Watch": "https://vidsrc.cc/v2/embed/movie/399566"
+        },
+        
+        
+       
+       
+        
+        {
+          "imdb_id": "tt4682266",
+          "Id": 340102,
+          "movieId": 340102,
+          "Genre": "Science Fiction, Horror, Action, Mystery, Adventure",
+          "Director": "Josh Boone",
+          "Actor": "Blu Hunt, Maisie Williams, Anya Taylor-Joy",
+          "Title": "The New Mutants",
+          "Duration": 94,
+          "Release": "2020",
+          "Description": "Five young mutants, just discovering their abilities while held in a secret facility against their will, fight to escape their past sins and save themselves.",
+          "Rating": 180.949,
+          "Trailer": "https://www.youtube.com/watch?v=oZm1YjUJ3_E",
+          "Country": "United States",
+          "Thumbnail": "https://image.tmdb.org/t/p/w450_and_h300_bestv2/xZNw9xxtwbEf25NYoz52KdbXHPM.jpg",
+          "Cover": "https://images.flickdirect.com/movies/new-mutants/new-mutants-poster.jpg",
+          "Watch": "https://vidsrc.cc/v2/embed/movie/340102"
+        },
+        
+        
+       
+        {
+          "imdb_id": "tt0230011",
+          "Id": 10865,
+          "movieId": 10865,
+          "Genre": "Animation, Family, Adventure, Science Fiction",
+          "Director": "Kirk Wise, Gary Trousdale",
+          "Actor": "Michael J. Fox, Cree Summer, James Garner",
+          "Title": "Atlantis: The Lost Empire",
+          "Duration": 95,
+          "Release": "2001",
+          "Description": "The world's most highly qualified crew of archaeologists and explorers is led by historian Milo Thatch as they board the incredible 1,000-foot submarine Ulysses and head deep into the mysteries of the sea. The underwater expedition takes an unexpected turn when the team's mission must switch from exploring Atlantis to protecting it.",
+          "Rating": 33.636,
+          "Trailer": "https://www.youtube.com/watch?v=DIA1OxnY3s4",
+          "Country": "United States",
+          "Thumbnail": "https://image.tmdb.org/t/p/w450_and_h300_bestv2/rdCyK9hgoA2vYrLtVFpDc3KWBaC.jpg",
+          "Cover": "https://lumiere-a.akamaihd.net/v1/images/p_atlantis_19870_4a082829.jpeg",
+          "Watch": "https://vidsrc.cc/v2/embed/movie/10865"
+        },
+        {
+          "imdb_id": "tt21692408",
+          "Id": "1630856711",
+          "Genre": "Animation, Action, Family, Comedy, Fantasy",
+          "Actor": "Jack Black, Awkwafina, Viola Davis",
+          "Director": "Mike Mitchell",
+          "Country": "United States, China",
+          "Duration": 94,
+          "Release": "2024",
+          "Rating": 879.767,
+          "Cover": "https://m.media-amazon.com/images/S/pv-target-images/c6fb58055b3649eae203ec37aa4825594dad40fcaa8360bd2a09a9cffb7c7917.jpg",
+          "Title": "Kung Fu Panda 4",
+          "Watch": "https://vidsrc.cc/v2/embed/movie/1011985",
+          "Thumbnail": "https://img.cdno.my.id/thumb/w_200/h_300/kung-fu-panda-4-1630856711.jpg",
+          "Description": "Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.",
+          "Trailer": "https://www.youtube.com/watch?v=DHmc-gFUeWU",
+          "movieId": 1011985
+        }
+      ]
+    }
+  }

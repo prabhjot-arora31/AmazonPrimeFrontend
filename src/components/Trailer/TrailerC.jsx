@@ -1,38 +1,19 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const TrailerC = () => {
-  const { trailer } = useParams(); // Get the trailer ID from the URL
-  const [isMuted, setIsMuted] = useState(false); // Track mute state
+const TrailerC = ({ trailerFC }) => {
+  console.log("trailerFC", trailerFC);
+  // const { trailer } = useParams(); // Get the trailer ID from the URL
   const iframeRef = useRef(null); // Reference to the iframe
-  const navigate = useNavigate();
-  useEffect(() => {
-    // Function to send a message to the iframe
-    const sendMessageToIframe = (command) => {
-      if (iframeRef.current) {
-        iframeRef.current.contentWindow.postMessage(
-          JSON.stringify(command),
-          "*"
-        );
-      }
-    };
-
-    // Send mute/unmute command when isMuted changes
-    sendMessageToIframe({
-      event: "command",
-      func: isMuted ? "mute" : "unMute",
-    });
-  }, [isMuted]);
-
-  const toggleMute = () => {
-    setIsMuted(!isMuted);
-  };
-
-  const youtubeUrl = `https://www.youtube.com/embed/${trailer}?autoplay=1&loop=1&controls=1&color=white&modestbranding=0&rel=0&playsinline=1&enablejsapi=1&playlist=${trailer}`;
+  const youtubeUrl = `https://www.youtube.com/embed/${
+    trailerFC && trailerFC.split("=")[1]
+  }?autoplay=1&loop=1&controls=0&mute=1&color=white&modestbranding=0&rel=0&playsinline=1&enablejsapi=0&playlist=${
+    trailerFC && trailerFC.split("=")[1]
+  }&cc_load_policy=0`;
 
   return (
     <>
-      <button
+      {/* <button
         style={{ marginBottom: "1.3rem" }}
         onClick={() => {
           navigate("/home");
@@ -45,7 +26,7 @@ const TrailerC = () => {
         style={{ marginBottom: "1.3rem", marginLeft: "1.4rem" }}
       >
         {isMuted ? "Unmute" : "Mute"}
-      </button>
+      </button> */}
       <div
         style={{
           width: "100%",
@@ -61,7 +42,6 @@ const TrailerC = () => {
           src={youtubeUrl}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
         ></iframe>
       </div>
     </>

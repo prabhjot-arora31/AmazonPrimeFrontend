@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Movies from "../components/Movies/Movies";
 import "./SpecificMovieType.css";
 const SpecificMovieType = () => {
+  const [firstMovieLength, setFirstMovieLength] = useState(0);
   const { name } = useParams();
   const navigate = useNavigate();
   const [movieData, setMovieData] = useState([]);
@@ -11,10 +12,17 @@ const SpecificMovieType = () => {
     window.scrollTo(0, 0);
     try {
       console.log(`${name.toLowerCase()}_movies.json`);
-      import(`../data/${name.toLowerCase()}_movies.json`).then((data) => {
-        console.log(data.default.result.data);
-        setMovieData(data.default.result.data);
-      });
+      import(`../data/${name.toLowerCase()}_movies.json`)
+        .then((data1) => {
+          const movies1 = data1.default.result.data;
+          console.log("Movies from first file:", movies1);
+          setFirstMovieLength(movies1.length);
+          // Load the second JSON file after the first has loaded
+          setMovieData(movies1);
+        })
+        .catch((error) => {
+          console.error("Error loading movies:", error);
+        });
     } catch (error) {}
     const jsonFile = import(`../data/${name.toLowerCase()}_movies.json`);
     console.log(jsonFile.toString());

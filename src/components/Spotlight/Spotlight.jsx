@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import "./Movies.css";
+// import "./Movies.css";
 import { useNavigate, useParams } from "react-router-dom";
-
-const Movies = ({ data, heading }) => {
+import "./Spotlight.css";
+const Spotlight = ({ data, heading }) => {
   const [itemsToShow, setItemsToShow] = useState(3); // Default value
   const containerRef = useRef(null);
   const [isHovered, setIsHovered] = useState({ yes: false, id: null });
@@ -46,7 +46,7 @@ const Movies = ({ data, heading }) => {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", marginBottom: "2rem" }}>
       <h5
         style={{
           textAlign: "left",
@@ -58,15 +58,6 @@ const Movies = ({ data, heading }) => {
         }}
       >
         {heading}
-        &nbsp; &nbsp; &nbsp;{" "}
-        <span
-          style={{ fontWeight: "700", fontSize: "18.6px", cursor: "pointer" }}
-          onClick={() => {
-            navigate(`/browse-more/${heading.split(" ")[0]}`);
-          }}
-        >
-          See more &gt;
-        </span>
       </h5>
 
       <div style={{ position: "relative" }}>
@@ -142,7 +133,7 @@ const Movies = ({ data, heading }) => {
                   {
                     <div
                       key={id}
-                      className="movie-card"
+                      className="movie-card-spotlight"
                       style={{
                         zIndex:
                           zIndexProperty.id === id ? zIndexProperty.value : 2,
@@ -247,4 +238,4 @@ const Movies = ({ data, heading }) => {
   );
 };
 
-export default Movies;
+export default Spotlight;

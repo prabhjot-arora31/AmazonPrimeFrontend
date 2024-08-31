@@ -4,8 +4,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import Header from "../components/Header/Header";
 import MainHeader from "../components/MainHeader";
 import "./MovieDetail.css";
+import TrailerC from "../components/Trailer/TrailerC";
 const MovieDetail = () => {
-  const { id, genre } = useParams();
+  const { id, genre, length2 } = useParams();
   const movie = useSelector((state) => {
     return state.movie;
   });
@@ -17,11 +18,13 @@ const MovieDetail = () => {
     window.scrollTo(0, 0);
     console.log(filteredData);
     console.log("PARAMS ARE:", id, " ", genre);
+    console.log("LENGTH IS MY FRIEND: ", length2);
     console.log("image bg:", filteredData.Cover && filteredData.Cover);
     if (genre) {
       try {
         import(`../data/${genre.toLowerCase()}_movies.json`).then((data) => {
           // console.log(data.default.result.data);
+
           data.default.result.data.map((movie) => {
             console.log(typeof movie.movieId);
             console.log(typeof id);
@@ -56,6 +59,7 @@ const MovieDetail = () => {
         style={{
           width: "100%",
           display: "flex",
+          marginTop: "5px",
           justifyContent: "center",
           paddingTop: "1.2rem",
           backgroundImage:
@@ -76,17 +80,17 @@ const MovieDetail = () => {
             position: "relative",
             width: "100%",
             height: "100%",
-            marginTop: "10px",
           }}
         >
-          <img
+          {/* <img
             style={{
               width: "100%",
               height: "100%",
               objectFit: "cover", // Ensures the image covers the entire area
             }}
             src={filteredData.Cover}
-          />
+          /> */}
+          <TrailerC trailerFC={filteredData.Trailer} />
 
           <div
             style={{
@@ -105,7 +109,11 @@ const MovieDetail = () => {
 
         <div
           className="detail-info"
-          style={{ position: "relative", zIndex: 1, marginLeft: "12px", marginTop:'-60.746px' }}
+          style={{
+            position: "relative",
+            zIndex: 1,
+            marginLeft: "12px",
+          }}
         >
           <h1
             className="movie-title"
