@@ -11,7 +11,7 @@ const WatchMovie = () => {
   }, []);
   return (
     <div style={{ height: "100vh", boxSizing: "border-box" }}>
-      <button
+      {/* <button
         onClick={() => {
           if (localStorage.getItem("movieCategory"))
             navigate(
@@ -30,7 +30,7 @@ const WatchMovie = () => {
         }}
       >
         Back
-      </button>
+      </button> */}
       <div
         style={{
           position: "relative",

@@ -20,7 +20,21 @@ const MovieDetail = () => {
     console.log("PARAMS ARE:", id, " ", genre);
     console.log("LENGTH IS MY FRIEND: ", length2);
     console.log("image bg:", filteredData.Cover && filteredData.Cover);
-    if (genre) {
+    if (id == "spotlight") {
+      import(`../data/${id.toLowerCase()}_movies.json`).then((data) => {
+        // console.log(data.default.result.data);
+
+        // data.default.result.data.map((movie) => {
+        //   console.log(typeof movie.movieId);
+        //   console.log(typeof id);
+        // });
+        const d = data.default.result.data.filter((movie) => {
+          return parseInt(movie.movieId) == parseInt(genre) && movie;
+        });
+        console.log("d is:", d);
+        setFilteredData(d[0]);
+      });
+    } else if (genre) {
       try {
         import(`../data/${genre.toLowerCase()}_movies.json`).then((data) => {
           // console.log(data.default.result.data);
@@ -198,6 +212,7 @@ const MovieDetail = () => {
               })}
           </ul>
           <div
+            className="btn-to-hover-div"
             style={{
               textAlign: "left",
               display: "flex",
@@ -206,13 +221,36 @@ const MovieDetail = () => {
             }}
           >
             <button
+              style={{
+                textAlign: "left",
+              }}
               onClick={() => {
                 // window.open(filteredData.Watch, "_blank");
                 const idOfUrl = filteredData.Watch.split("/")[6];
-                navigate(`/watch-movie/${idOfUrl}`);
+                // navigate(`/watch-movie/${idOfUrl}`);
               }}
             >
-              <i className="fa-solid fa-play"></i> &nbsp;Watch Now
+              {id != "spotlight" ? (
+                <>
+                  <i className="fa-solid fa-play"></i>{" "}
+                  <span> &nbsp;Watch Now </span>
+                </>
+              ) : (
+                <>
+                  Rent <br />
+                  <span
+                    style={{
+                      fontSize: "19px",
+                      outline: "none",
+                      border: "none",
+                      fontWeight: "600",
+                    }}
+                  >
+                    {" "}
+                    UHD &#x20b9; 149
+                  </span>
+                </>
+              )}
             </button>
             <button
               style={{

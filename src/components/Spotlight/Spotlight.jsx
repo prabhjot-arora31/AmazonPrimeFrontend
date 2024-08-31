@@ -152,7 +152,7 @@ const Spotlight = ({ data, heading }) => {
                     >
                       <img
                         onClick={() => {
-                          navigate(`/movie/${id}`);
+                          navigate(`/movie/spotlight/${ele.movieId}`);
                           localStorage.removeItem("movieCategory");
                           localStorage.setItem(
                             "movieData",

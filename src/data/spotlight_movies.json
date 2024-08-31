@@ -36,7 +36,7 @@
           "Release": "2009",
           "Description": "Forks, Washington resident Bella Swan is reeling from the departure of her vampire love, Edward Cullen, and finds comfort in her friendship with Jacob Black, a werewolf. But before she knows it, she's thrust into a centuries-old conflict, and her desire to be with Edward at any cost leads her to take greater and greater risks.",
           "Rating": 67.351,
-          "Trailer": "https://www.youtube.com/watch?v=BNi-ebCWXos",
+          "Trailer": "https://www.youtube.com/watch?v=q58iQSHhZGg",
           "Country": "United States",
           "Thumbnail": "https://image.tmdb.org/t/p/w450_and_h300_bestv2/k2qTooPlHffgNABNWxeJdGMglPK.jpg",
           "Cover": "https://image.tmdb.org/t/p/original/642bUkzkg2yTcxofvpAWOgsspR1.jpg",
@@ -106,6 +106,24 @@
           "Watch": "https://vidsrc.cc/v2/embed/movie/10865"
         },
         {
+          "imdb_id": "tt7510222",
+          "Id": 519182,
+          "movieId": 519182,
+          "Genre": "Animation, Family, Comedy, Action",
+          "Director": "Chris Renaud",
+          "Actor": "Steve Carell, Kristen Wiig, Will Ferrell",
+          "Title": "Despicable Me 4",
+          "Duration": 94,
+          "Release": "2024",
+          "Description": "Gru and Lucy and their girls — Margo, Edith and Agnes — welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, and the family is forced to go on the run.",
+          "Rating": 199.343,
+          "Trailer": "https://www.youtube.com/watch?v=qQlr9-rF32A",
+          "Country": "United States",
+          "Thumbnail": "https://image.tmdb.org/t/p/w300_and_h450_bestv2/7aE05hgqGxMECJdZiLuQKs3abTV.jpg",
+          "Cover": "https://image.tmdb.org/t/p/original/aun2IpLDx2E08hYj8xnAEUEFLlo.jpg",
+          "Watch": "https://vidsrc.cc/v2/embed/movie/519182"
+        },
+        {
           "imdb_id": "tt21692408",
           "Id": "1630856711",
           "Genre": "Animation, Action, Family, Comedy, Fantasy",
@@ -120,7 +138,7 @@
           "Watch": "https://vidsrc.cc/v2/embed/movie/1011985",
           "Thumbnail": "https://img.cdno.my.id/thumb/w_200/h_300/kung-fu-panda-4-1630856711.jpg",
           "Description": "Po is gearing up to become the spiritual leader of his Valley of Peace, but also needs someone to take his place as Dragon Warrior. As such, he will train a new kung fu practitioner for the spot and will encounter a villain called the Chameleon who conjures villains from the past.",
-          "Trailer": "https://www.youtube.com/watch?v=DHmc-gFUeWU",
+          "Trailer": "https://www.youtube.com/watch?v=_inKs4eeHiI",
           "movieId": 1011985
         }
       ]

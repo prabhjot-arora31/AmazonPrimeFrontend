@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userLogin } from "../redux/actions/userActions";
+import { userLogin, userRequest } from "../redux/actions/userActions";
 import { Link, useNavigate } from "react-router-dom";
 import { USER_LOGIN } from "../redux/constants/userConstants";
 
@@ -10,17 +10,24 @@ const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const isLoading = useSelector((state) => state.user.loading);
   const userInfo = useSelector((state) => {
-    // console.log(state);
+    console.log("FROM LOGIN: ", state);
     return state.user.userInfo;
   });
   const { error } = userInfo;
+  useEffect(() => {
+    console.log(loading);
+
+    return () => {};
+  }, [loading]);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     setLoading(true);
+    dispatch(userRequest());
     setCustomError("");
     dispatch(userLogin(userData.email, userData.password, navigate));
-    e.preventDefault();
     if (userData.email.trim() === "") {
       setCustomError("Please enter email field");
       setLoading(false);
@@ -193,7 +200,7 @@ const Login = () => {
           )}
         </div>
         <button
-          disabled={loading ? true : false}
+          disabled={isLoading ? true : false}
           type="submit"
           style={{
             backgroundColor: "#FFD814",
@@ -203,7 +210,7 @@ const Login = () => {
             padding: "0.3rem 0.7rem",
           }}
         >
-          {loading == true ? "Loading..." : "Sign in"}
+          {isLoading == true ? "Loading..." : "Sign in"}
         </button>
         <p
           style={{

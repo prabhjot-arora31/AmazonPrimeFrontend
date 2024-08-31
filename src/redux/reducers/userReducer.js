@@ -11,9 +11,15 @@ const userReducer = (
   { type, payload }
 ) => {
   switch (type) {
+    case "USER_REQUEST":
+      return {
+        ...state,
+        loading: true,
+      };
     case USER_REGISTER:
       return {
         ...state,
+        loading: false,
         userInfo: payload.email
           ? {
               email: payload.email,
@@ -24,6 +30,7 @@ const userReducer = (
     case USER_LOGIN:
       return {
         ...state,
+        loading: false,
         userInfo: payload.user
           ? { email: payload.user.email.email, error: "" }
           : { error: payload.error, email: "" },
@@ -32,6 +39,7 @@ const userReducer = (
       console.log("come to user details");
       return {
         ...state,
+        loading: false,
         userInfo: payload.user
           ? { email: payload.user.email.email, error: "" }
           : payload.error
@@ -39,7 +47,7 @@ const userReducer = (
           : { loggedInUserDetails: payload },
       };
     case USER_LOGOUT:
-      return { userInfo: { error: "", email: "" } };
+      return { loading: false, userInfo: { error: "", email: "" } };
     default:
       return state;
   }

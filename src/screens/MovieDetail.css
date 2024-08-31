@@ -51,3 +51,12 @@
     top: 29px;
   }
 }
+.btn-to-hover-div button {
+  background-color: #393a3f;
+  color: white;
+  transition: 0.4s ease-in-out;
+}
+.btn-to-hover-div button:hover {
+  background-color: white;
+  color: black;
+}

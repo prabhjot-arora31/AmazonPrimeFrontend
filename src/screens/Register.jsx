@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { userRegister } from "../redux/actions/userActions";
+import { userRegister, userRequest } from "../redux/actions/userActions";
 import { USER_REGISTER } from "../redux/constants/userConstants";
 import { Link, useNavigate } from "react-router-dom";
 const Register = ({ history }) => {
   const dispatch = useDispatch();
   const userInfo = useSelector((state) => state.user.userInfo);
   const navigate = useNavigate();
+  const isLoading = useSelector((state) => state.user.loading);
+  // const navigate = useNavigate()
   const { error, email } = userInfo;
   const registeredUser = useSelector((state) => {
     console.log("state is:", state);
@@ -19,9 +21,14 @@ const Register = ({ history }) => {
     password: "",
   });
   const submitHandler = (e) => {
+    alert("hey");
     e.preventDefault();
-    console.log("acd");
-    dispatch(userRegister(userData.name, userData.email, userData.password));
+    dispatch(userRequest());
+    // console.log("acd");
+    // console.log(userData);
+    dispatch(
+      userRegister(userData.name, userData.email, userData.password, navigate)
+    );
     // dispatch({
     //   type: USER_REGISTER,
     //   payload: { name: "Prabhjot", email: "pra@g.co" },
@@ -222,6 +229,7 @@ const Register = ({ history }) => {
             </p>
           </div>
           <button
+            disabled={isLoading ? true : false}
             type="submit"
             onClick={submitHandler}
             style={{
@@ -232,7 +240,7 @@ const Register = ({ history }) => {
               padding: "0.3rem 0.7rem",
             }}
           >
-            Create your Amazon account
+            {isLoading == true ? "Loading..." : "Create your Amazon account"}
           </button>
           <p
             style={{

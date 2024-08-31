@@ -5,6 +5,12 @@ import {
   USER_REGISTER,
 } from "../constants/userConstants";
 
+export const userRequest = () => {
+  return {
+    type: "USER_REQUEST",
+  };
+};
+
 const userLogin = (email, password, navigate) => async (dispatch) => {
   try {
     const { data } = await axios.post(
@@ -30,33 +36,36 @@ const userLogin = (email, password, navigate) => async (dispatch) => {
     }
   }
 };
-const userRegister = (fullName, email, password) => async (dispatch) => {
-  try {
-    const { data } = await axios.post(
-      `https://amazon-prime-backend.vercel.app/api/user`,
-      {
-        fullName,
-        email,
-        password,
+const userRegister =
+  (fullName, email, password, navigate) => async (dispatch) => {
+    console.log("inside userRegister:", fullName, email, password);
+    try {
+      const { data } = await axios.post(
+        `https://amazon-prime-backend.vercel.app/api/user`,
+        {
+          fullName,
+          email,
+          password,
+        }
+      );
+      console.log("data from register: ", data);
+      console.log("data.user is:", data.user);
+      localStorage.setItem("token", data.token);
+      dispatch({
+        type: USER_REGISTER,
+        payload: data.user,
+      });
+      navigate("/");
+    } catch (err) {
+      if (err.response) {
+        console.log(err.message);
+        console.log(err.response.data);
+        dispatch({ type: USER_REGISTER, payload: err.response.data });
+      } else {
+        console.log("error occured.");
       }
-    );
-    console.log("data from register: ", data);
-    console.log("data.user is:", data.user);
-    localStorage.setItem("token", data.token);
-    dispatch({
-      type: USER_REGISTER,
-      payload: data.user,
-    });
-  } catch (err) {
-    if (err.response) {
-      console.log(err.message);
-      console.log(err.response.data);
-      dispatch({ type: USER_REGISTER, payload: err.response.data });
-    } else {
-      console.log("error occured.");
     }
-  }
-};
+  };
 const userDetails = () => async (dispatch) => {
   const { data } = await axios.get(
     "https://amazon-prime-backend.vercel.app/api/user/profile",

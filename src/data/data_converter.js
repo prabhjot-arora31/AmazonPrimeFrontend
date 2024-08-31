@@ -4,7 +4,7 @@ import fs from "fs";
 const convertAndStore = async () => {
   try {
     const url =
-      "https://advance-movie-api.p.rapidapi.com/api/v1/streamitfree/search?query=kung%20fu%20panda%204";
+      "https://advance-movie-api.p.rapidapi.com/api/v1/streamitfree/search?query=Despicable%20Me%204";
     const options = {
       method: "GET",
       headers: {
