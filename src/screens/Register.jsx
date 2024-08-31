@@ -21,7 +21,7 @@ const Register = ({ history }) => {
     password: "",
   });
   const submitHandler = (e) => {
-    alert("hey");
+    //alert("hey");
     e.preventDefault();
     dispatch(userRequest());
     // console.log("acd");
