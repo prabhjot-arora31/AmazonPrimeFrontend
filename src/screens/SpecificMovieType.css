@@ -1,7 +1,7 @@
 .movie-card-specific {
   width: 220px;
   overflow: hidden;
-  height: 120px;
+  height: 80px;
 }
 .movie-card-specific div {
   color: white;
@@ -29,14 +29,14 @@
     margin-right: 0;
     padding-right: 0;
     width:120px;
-    height:178px;
+    height:128px;
     /* margin: 0 auto; */
   }
 }
 @media (max-width: 370px) {
   .movie-card-specific {
     width: 120px;
-    height: 178.8px;
+    height: 128.8px;
   }
 }
 @media (max-width: 325px) {
