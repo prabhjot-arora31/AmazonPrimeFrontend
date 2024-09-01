@@ -23,6 +23,7 @@ const userLogin = (email, password, navigate) => async (dispatch) => {
     console.log("data from login: ", data);
     localStorage.setItem("token", data.token);
     localStorage.setItem("id", data.user._id);
+    localStorage.setItem('email',data.user.email);
     localStorage.setItem("name", data.user.fullName);
     dispatch({
       type: USER_LOGIN,
@@ -50,6 +51,7 @@ const userRegister =
       );
       console.log("data from register: ", data);
       console.log("data.user is:", data.user);
+      localStorage.setItem('email', data.user.email);
       localStorage.setItem("token", data.token);
       dispatch({
         type: USER_REGISTER,
