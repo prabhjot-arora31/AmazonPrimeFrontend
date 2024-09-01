@@ -83,12 +83,13 @@ const SpecificMovieType = () => {
                   height={"100%"}
                   style={{ objectFit: "cover", borderRadius: "10px" }}
                 />
-                <div className="extraInfo">
+                <div className="extraInfo" style={{textAlign:'left'}}>
                   <h3 style={{}}>
                     {movie.Title.length > 20
                       ? movie.Title.slice(0, 20) + "..."
                       : movie.Title}
                   </h3>
+                  <p style={{color:'#A9A9A9', marginBottom:0, marginTop:'3.35px' }}>{movie.Release}</p>
                 </div>
               </div>
             );
