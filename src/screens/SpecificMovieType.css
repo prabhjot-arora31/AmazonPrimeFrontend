@@ -18,6 +18,7 @@
   font-size: 17.3px;
 }
 .s-header {
+  font-weight:700;
   font-size: 32px;
 }
 @media (max-width: 492px) {
@@ -47,9 +48,9 @@
 }
 @media (max-width: 296px) {
   .movie-card-specific {
-    width: 123px;
-    height: 67px;
-    gap: 10px;
+    width: 103px;
+    height: 48.78px;
+    gap: 4.79px;
   }
   .s-header {
     font-size: 23.6px;
