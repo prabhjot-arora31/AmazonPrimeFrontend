@@ -1,7 +1,7 @@
 .movie-card-specific {
-  width: 220px;
+  width: 120px;
   overflow: hidden;
-  height: 80px;
+  height: 40px;
 }
 .movie-card-specific div {
   color: white;
