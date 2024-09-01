@@ -11,10 +11,10 @@
   height: 100%;
 }
 .extraInfo {
-  width: 300px;
+ /* width: 300px; */
 }
 .extraInfo h3 {
-  width: 105px;
+/*  width: 105px;*/
   font-size: 17.3px;
 }
 .s-header {
